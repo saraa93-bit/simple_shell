@@ -1,5 +1,5 @@
 #include "main.h"
-int main() {
+int chilp_pid() {
     pid_t chilp;
 
     chilp = fork();
@@ -7,11 +7,16 @@ int main() {
     if (chilp < 0) {
         printf(stderr, "Fork failed\n");
         return 1;
-    } else if (chilp == 0) {
+    }
+    else if (chilp == 0)
+    {
         printf("\n");
-    } else {
+    }
+    else
+    {
         printf(error);
     }
 
-    return 0;
+
+    return (0);
 }
