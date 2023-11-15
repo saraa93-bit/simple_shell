@@ -45,7 +45,7 @@ char *copy_line(char *line)
 int tokens_number(char *line)
 {
 	char *lineptr = _strdup(line);
-	const char *delim = "\n";
+	const char *delim = "\t \a\n";
 	int tn_tokens = 0;
 	char *token;
 
@@ -74,7 +74,7 @@ char **argv_array(char *line)
 	char *copy_lineptr = _strdup(line);
 	char **argv = malloc(sizeof(char *));
 	char *token;
-	const char *delim = " ";
+	const char *delim = "\t \a\n";
 
 	token = strtok(copy_lineptr, delim);
 

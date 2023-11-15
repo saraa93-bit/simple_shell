@@ -6,40 +6,29 @@
 void interactive_shell(void)
 {
 	char *pro = "$ ";
-	char *line;
+	char *line = NULL;
 	char **argv;
-	int i, j;
+	char *c;
+	const char *d = " \a\n\t";
+	char **t;
 
+	t = f_path(environ);
+	printf("%s", pro);
 	while (1)
 	{
-		printf("%s", pro);
 		line = read_line();
-		if (line == NULL)
+		argv = splits(line, d);
+		c = args_path(argv, t);
+		if (c == NULL)
 		{
-			exit(EXIT_FAILURE);
-		}
-		argv = argv_array(line);
-		j = fork();
-		if (j == -1)
-		{
-			perror("fork");
-			exit(EXIT_FAILURE);
-		}
-		if (j == 0)
-		{
-			exec_command(argv);
-			exit(0);
-		} else
-		{
-			wait(NULL);
-		}
-		for (i = 0; argv[i] != NULL; i++)
-		{
-			_free(argv[i]);
-		}
-		_free(argv);
+			execute(argv);
+		}	
 		_free(line);
+		_free(argv);
+		_free(c);
 	}
+	return (0);
+
 }
 /**
  * non_interactive_shell - function that executes the shell
@@ -48,38 +37,27 @@ void interactive_shell(void)
 void non_interactive_shell(void)
 {
 	char *pro = "($) ";
-	char *line;
+	char *line = NULL;
 	char **argv;
-	int i, j;
+	char *c;
+	const char *d = " \a\n\t";
+	char **t;
 
+	t = f_path(environ);
+	printf("%s", pro);
 	while (1)
 	{
-		printf("%s", pro);
 		line = read_line();
-		if (line == NULL)
+		argv = splits(line, d);
+		c = args_path(argv, t);
+		if (c == NULL)
 		{
-			exit(EXIT_FAILURE);
-		}
-		argv = argv_array(line);
-		j = fork();
-		if (j == -1)
-		{
-			perror("fork");
-			exit(EXIT_FAILURE);
-		}
-		if (j == 0)
-		{
-			exec_command(argv);
-			exit(0);
-		} else
-		{
-			wait(NULL);
-		}
-		for (i = 0; argv[i] != NULL; i++)
-		{
-			_free(argv[i]);
-		}
-		_free(argv);
+			execute(argv);
+		}	
 		_free(line);
+		_free(argv);
+		_free(c);
 	}
+	return (0);
+
 }

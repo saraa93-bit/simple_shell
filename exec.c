@@ -6,18 +6,26 @@
 */
 void exec_command(char **argv)
 {
-char *nd = NULL;
+	pid_t i;
+	int status;
 
-if (argv)
-{
-	nd = argv[0];
-
-	if (execve(nd, argv, NULL) == -1)
+	i = fork();
+	if (i == 0)
 	{
-		perror("Error");
-		exit(EXIT_FAILURE);
+		if (execve(argv[0], argv, NULL) == -1)
+		{
+			perror(argv[0]);
+			exit(1);
+		}
 	}
-}
+	else if (i > 0)
+	{
+		wait(&status);
+	}
+	else
+		perror("Error:");
+
+	return (0);
 }
 /**
  * h_exit - function that terminate the prog when
