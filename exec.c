@@ -32,7 +32,7 @@ void h_exit(char *c)
 	i = _strcmp("exit", c);
 	if (i == 0)
 	{
-		free(c);
+		_free(c);
 		exit(EXIT_SUCCESS);
 	}
 }

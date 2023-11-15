@@ -26,5 +26,7 @@ char *_strcat(char *dest, char *src);
 void h_exit(char *c);
 void exec_command(char **argv);
 char *_getenv(char *n);
+int _free(void **ptr);
+int chilp_pid(void);
 
 #endif

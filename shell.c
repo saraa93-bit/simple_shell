@@ -35,10 +35,10 @@ void interactive_shell(void)
 		}
 		for (i = 0; argv[i] != NULL; i++)
 		{
-			free(argv[i]);
+			_free(argv[i]);
 		}
-		free(argv);
-		free(line);
+		_free(argv);
+		_free(line);
 	}
 }
 /**
@@ -77,9 +77,9 @@ void non_interactive_shell(void)
 		}
 		for (i = 0; argv[i] != NULL; i++)
 		{
-			free(argv[i]);
+			_free(argv[i]);
 		}
-		free(argv);
-		free(line);
+		_free(argv);
+		_free(line);
 	}
 }

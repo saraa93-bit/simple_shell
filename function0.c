@@ -13,7 +13,7 @@ char *read_line(void)
 	tnchars = getline(&lineptr, &num, stdin);
 	if (tnchars == -1)
 	{
-		free(lineptr);
+		_free(lineptr);
 		return (NULL);
 	}
 	return (lineptr);
@@ -59,7 +59,7 @@ int tokens_number(char *line)
 	}
 	tn_tokens++;
 
-	free(lineptr);
+	_free(lineptr);
 
 	return (tn_tokens);
 }
@@ -87,7 +87,7 @@ char **argv_array(char *line)
 	argv = realloc(argv, (n + 1) * sizeof(char *));
 	argv[n] = NULL;
 
-	free(copy_lineptr);
+	_free(copy_lineptr);
 
 	return (argv);
 }
