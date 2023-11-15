@@ -43,18 +43,24 @@ void h_exit(char *c)
 */
 char *_getenv(char *n)
 {
-	int l;
-	char **env;
+		int k, i;
+		char *v, *f;
 
-	env = environ;
-	l = _strlen(n);
-	while (env)
+	for (i = 0; environ[i]; i++)
 	{
-		if (strncmp(n, *env, l) == 0 && (*env)[l] == '=')
+		v = malloc(1024);
+
+		for (k = 0; environ[i][k] != '='; k++)
+			v[k] = environ[i][k];
+
+		if (_strcmp(v, n))
 		{
-			return (*env + l + 1);
+			f = _strlen(environ[i]);
+			_free(v);
+			return (f);
+
 		}
-		env++;
+		_free(v);
 	}
 	return (NULL);
 }
