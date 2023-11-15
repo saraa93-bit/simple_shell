@@ -1,6 +1,6 @@
 #include"main.h"
 /**
- * 
+ *
 */
 char *h_path(char **p, char **n)
 {
@@ -33,13 +33,13 @@ char *h_path(char **p, char **n)
 	return (NULL);
 }
 /**
- * 
+ *
 */
 char **f_path(void)
 {
 	char *p;
-    char **t; 
-    char *d;
+	char **t;
+	char *d;
 
 	d = ":";
 	p = _getenv("PATH");

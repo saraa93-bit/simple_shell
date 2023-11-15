@@ -22,7 +22,7 @@ void interactive_shell(void)
 		if (c == NULL)
 		{
 			execute(argv);
-		}	
+		}
 		_free(line);
 		_free(argv);
 		_free(c);
@@ -53,7 +53,7 @@ void non_interactive_shell(void)
 		if (c == NULL)
 		{
 			execute(argv);
-		}	
+		}
 		_free(line);
 		_free(argv);
 		_free(c);
