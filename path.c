@@ -1,7 +1,5 @@
 #include"main.h"
-/**
- *
-*/
+
 char *h_path(char **p, char **n)
 {
 	char *t, **cat;
