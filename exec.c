@@ -25,7 +25,7 @@ void exec_command(char **argv)
 	else
 		perror("Error:");
 
-	return (0);
+	return(0);
 }
 /**
  * h_exit - function that terminate the prog when
@@ -33,14 +33,14 @@ void exec_command(char **argv)
  * @c: the string to be read.
  * Return: nothing.
  */
-void h_exit(char *c)
+void h_exit(char *ch)
 {
 	int i;
 
-	i = _strcmp("exit", c);
+	i = _strcmp("exit", ch);
 	if (i == 0)
 	{
-		_free(c);
+		_free(ch);
 		exit(EXIT_SUCCESS);
 	}
 }
