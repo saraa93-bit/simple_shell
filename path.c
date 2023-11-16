@@ -1,10 +1,14 @@
 #include"main.h"
+<<<<<<< HEAD
 /**
  * h_path - ...
  * @p: pointer
  * @n:name
  * Return: zero
 */
+=======
+
+>>>>>>> 79ea58264b096424800da304f6608cd91757b5dd
 char *h_path(char **p, char **n)
 {
 	char *t, **cat;

@@ -24,13 +24,12 @@ void exec_command(char **argv)
 	}
 	else
 		perror("Error:");
-
-	return(0);
+	return (0);
 }
 /**
  * h_exit - function that terminate the prog when
  * user types "exit".
- * @c: the string to be read.
+ * @ch: the string to be read.
  * Return: nothing.
  */
 void h_exit(char *ch)
