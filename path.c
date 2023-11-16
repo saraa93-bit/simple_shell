@@ -1,6 +1,9 @@
 #include"main.h"
 /**
- *
+ * h_path - ...
+ * @p: pointer
+ * @n:name
+ * Return: zero
 */
 char *h_path(char **p, char **n)
 {
@@ -33,7 +36,8 @@ char *h_path(char **p, char **n)
 	return (NULL);
 }
 /**
- *
+ * f_path - ...
+ * Return: t
 */
 char **f_path(void)
 {
